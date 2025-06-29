@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kumoi（クモイ）- 日本の商品を韓国で自動出品・自動在庫管理できる次世代システム</title>
-    <meta name="description" content="Amazon・楽天・Yahoo!の商品をCoupang等に完全自動出品。2025年9月リリース予定。">
+    <title>Kumoi（クモイ）- 韓国輸出を自動化する次世代ツール</title>
+    <meta name="description" content="韓国輸出を自動化する次世代ツール。エンジニア兼無在庫輸出法人代表が開発。2025年9月リリース予定。">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,7 +13,6 @@
                     animation: {
                         'fade-in': 'fadeIn 0.6s ease-in-out',
                         'slide-up': 'slideUp 0.8s ease-out',
-                        'bounce-gentle': 'bounceGentle 2s infinite',
                     }
                 }
             }
@@ -28,16 +27,11 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        @keyframes bounceGentle {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-5px); }
-            60% { transform: translateY(-3px); }
-        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
 
-    <!-- 1. ヒーローセクション -->
+    <!-- ヒーローセクション -->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
         <!-- 背景装飾 -->
         <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-indigo-600/5 to-purple-600/5"></div>
@@ -46,487 +40,183 @@
         
         <div class="container mx-auto px-6 text-center relative z-10">
             <div class="animate-fade-in">
-                <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
+                <h1 class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
                     Kumoi
                 </h1>
-                <h2 class="text-2xl md:text-3xl text-gray-800 mb-4 font-bold">
-                    日本の商品を韓国で自動出品・自動在庫管理できる次世代システム
-                </h2>
-                <p class="text-lg md:text-xl text-gray-600 mb-12">
-                    Amazon・楽天・Yahoo!の商品をCoupang等に完全自動出品
+                <p class="text-xl md:text-2xl text-gray-700 mb-4 font-medium">
+                    韓国輸出を自動化する次世代ツール
                 </p>
-                
-                <!-- システムの特徴 -->
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
-                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-                        <div class="text-blue-600 font-semibold text-sm">✓ 最新の自動化システム</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-                        <div class="text-blue-600 font-semibold text-sm">✓ 高品質翻訳サービス</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-                        <div class="text-blue-600 font-semibold text-sm">✓ 定期的な自動更新</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-                        <div class="text-blue-600 font-semibold text-sm">✓ 為替対応価格計算</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-                        <div class="text-blue-600 font-semibold text-sm">✓ 将来的にマルチサイト対応</div>
-                    </div>
-                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
-                        <div class="text-blue-600 font-semibold text-sm">✓ 月額7,200円から</div>
-                    </div>
-                </div>
+                <p class="text-lg text-gray-600 mb-12">
+                    エンジニア兼無在庫輸出法人代表が開発
+                </p>
                 
                 <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 mb-12 inline-block shadow-xl border border-white/20">
                     <p class="text-2xl font-bold text-blue-600 mb-2">2025年9月</p>
-                    <p class="text-lg text-gray-700">リリース予定</p>
+                    <p class="text-lg text-gray-700">正式リリース予定</p>
                 </div>
                 
-                <a href="#register" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-bounce-gentle">
+                <a href="#register" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                     事前登録する
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 2. 問題提起セクション -->
+    <!-- 3つの特徴セクション -->
     <section class="py-20 bg-white/50 backdrop-blur-sm">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-                韓国販売で<span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">こんな課題</span>ありませんか？
+                Kumoiの<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">3つの特徴</span>
             </h2>
             
-            <div class="max-w-3xl mx-auto">
-                <div class="space-y-8">
-                    <div class="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-red-500">
-                        <div class="flex items-center mb-4">
-                            <div class="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center mr-4">
-                                <span class="text-red-600 font-bold">×</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">手動での商品登録に時間がかかりすぎる</h3>
-                        </div>
-                        <p class="text-gray-600 ml-12">
-                            1つの商品を登録するのに30分以上…大量出品なんて現実的じゃない
-                        </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 特徴1: 韓国EC API直接連携 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 animate-slide-up">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-yellow-500">
-                        <div class="flex items-center mb-4">
-                            <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
-                                <span class="text-yellow-600 font-bold">×</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">在庫管理が追いつかない</h3>
-                        </div>
-                        <p class="text-gray-600 ml-12">
-                            在庫切れに気づかず注文を受けてしまい、キャンセル対応で評価が下がる
-                        </p>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">韓国EC API直接連携</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Coupang、11번가、SSGなど主要韓国ECサイトのAPIと直接連携。手動作業を完全に排除し、商品登録から在庫管理まで全自動化を実現します。
+                    </p>
+                </div>
+
+                <!-- 特徴2: 実践者が開発 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-purple-500">
-                        <div class="flex items-center mb-4">
-                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                                <span class="text-purple-600 font-bold">×</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">価格調整が複雑すぎる</h3>
-                        </div>
-                        <p class="text-gray-600 ml-12">
-                            為替変動、送料、手数料…計算が複雑で適正価格がわからない
-                        </p>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">実践者が開発</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        現役で韓国輸出事業を運営するエンジニアが開発。実際の現場で必要な機能だけを厳選し、本当に使えるツールとして設計されています。
+                    </p>
+                </div>
+
+                <!-- 特徴3: 毎週アップデート -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
                     </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">毎週アップデート</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        韓国ECサイトの仕様変更や新機能に迅速対応。毎週のアップデートで常に最新の機能を提供し、安定した輸出ビジネスをサポートします。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. ソリューション提示セクション -->
+    <!-- 開発者メッセージセクション -->
     <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                    <span class="bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">Kumoi</span>が<br>
-                    これらの課題を全て解決します
-                </h2>
-                <p class="text-xl mb-16 opacity-90">
-                    完全自動化で韓国輸出の効率を劇的に改善
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
-                        <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-2xl">⚡</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">自動商品登録</h3>
-                        <p class="text-lg opacity-90">
-                            Amazon・楽天・Yahoo!の商品を<br>
-                            Coupang等に自動で登録・出品
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
-                        <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-2xl">🔄</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">リアルタイム在庫同期</h3>
-                        <p class="text-lg opacity-90">
-                            在庫情報を自動監視<br>
-                            売り切れ前に自動で出品停止
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
-                        <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-2xl">💰</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">為替対応価格計算</h3>
-                        <p class="text-lg opacity-90">
-                            為替レート定期確認<br>
-                            送料・手数料込みの自動価格設定
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8">
-                        <div class="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                            <span class="text-2xl">🌐</span>
-                        </div>
-                        <h3 class="text-2xl font-bold mb-4">高品質翻訳システム</h3>
-                        <p class="text-lg opacity-90">
-                            DeepL翻訳サービス対応<br>
-                            （Google翻訳もサポート）
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. 機能詳細セクション -->
-    <section class="py-20 bg-white/50 backdrop-blur-sm">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-                Kumoiの<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">主要機能</span>
-            </h2>
-            
-            <div class="max-w-6xl mx-auto">
-                <div class="space-y-16">
-                    <!-- 機能1: 商品収集・翻訳 -->
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
-                        <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div>
-                                <div class="flex items-center mb-6">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mr-4">
-                                        <span class="text-white text-xl">📦</span>
-                                    </div>
-                                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">商品収集・翻訳</h3>
-                                </div>
-                                <ul class="space-y-4 text-gray-600">
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        Amazon・楽天・Yahoo!商品の自動収集
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        DeepL翻訳サービス対応（Google翻訳もサポート）
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        商品画像の自動最適化
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6">
-                                <div class="text-center">
-                                    <div class="text-4xl mb-4">🎯</div>
-                                    <p class="text-gray-700 font-semibold">精度の高い商品情報を<br>自動で韓国語に変換</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 機能2: 価格計算システム -->
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
-                        <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div class="md:order-2">
-                                <div class="flex items-center mb-6">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
-                                        <span class="text-white text-xl">💰</span>
-                                    </div>
-                                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">価格計算システム</h3>
-                                </div>
-                                <ul class="space-y-4 text-gray-600">
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        為替レート定期確認連動
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        送料・手数料の自動計算
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        利益率設定による自動調整
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="md:order-1 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-6">
-                                <div class="text-center">
-                                    <div class="text-4xl mb-4">📊</div>
-                                    <p class="text-gray-700 font-semibold">複雑な価格計算を<br>全て自動化</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 機能3: 在庫同期システム -->
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
-                        <div class="grid md:grid-cols-2 gap-8 items-center">
-                            <div>
-                                <div class="flex items-center mb-6">
-                                    <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
-                                        <span class="text-white text-xl">🔄</span>
-                                    </div>
-                                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800">在庫同期システム</h3>
-                                </div>
-                                <ul class="space-y-4 text-gray-600">
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        定期的な在庫状況チェック
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        在庫切れ時の自動出品停止
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm font-bold">✓</span>
-                                        在庫復活時の自動再出品
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6">
-                                <div class="text-center">
-                                    <div class="text-4xl mb-4">⚡</div>
-                                    <p class="text-gray-700 font-semibold">在庫切れによる<br>機会損失を防止</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. 開発者プロフィールセクション -->
-    <section class="py-20 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-                    開発者プロフィール
-                </h2>
-                
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">開発者からのメッセージ</h2>
                 <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12">
-                    <div class="grid md:grid-cols-3 gap-8 items-center">
-                        <div class="text-center">
-                            <div class="w-32 h-32 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full mx-auto mb-6 flex items-center justify-center">
-                                <span class="text-4xl">👨‍💻</span>
-                            </div>
-                            <div class="space-y-2">
-                                <p class="text-xl font-bold">エンジニア兼</p>
-                                <p class="text-xl font-bold">無在庫輸出法人代表</p>
-                                <div class="pt-4">
-                                    <a href="https://x.com/Kumoi_dev" target="_blank" 
-                                       class="inline-flex items-center text-blue-300 hover:text-blue-200 transition-colors">
-                                        <span class="mr-2">𝕏</span>
-                                        @Kumoi_dev
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="md:col-span-2">
-                            <div class="space-y-6 text-lg">
-                                <p class="leading-relaxed">
-                                    現在韓国輸出事業を運営しているエンジニアが、実際の現場で感じた課題を解決するために開発しています。
-                                </p>
-                                <p class="leading-relaxed">
-                                    「楽したい機能がないならば」「もっと効率化できるはず」という思いから、技術者ならではの視点でKumoiを設計しました。
-                                </p>
-                                <p class="leading-relaxed">
-                                    単なるツール提供ではなく、<strong>同じ課題を抱える仲間として</strong>、皆様のビジネス成長をサポートしたいと考えています。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="border-t border-white/20 pt-6 mt-8">
-                        <h4 class="text-xl font-semibold mb-4 text-yellow-300">開発者メッセージ</h4>
-                        <p class="text-lg italic mb-4">"現役エンジニア×無在庫輸出法人代表として活動中"</p>
-                        <p class="text-base">"実際に自社の韓国輸出で使いながら日々改善しています"</p>
-                        
-                        <div class="bg-blue-500/20 rounded-2xl p-6 mt-6">
-                            <h5 class="text-lg font-semibold mb-2 text-blue-300">最大の特徴</h5>
-                            <p class="text-base">開発者が実際にKumoiを使用して事業を運営している点が他ツールとの決定的な違い</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. 料金体系セクション -->
-    <section class="py-20 bg-white/50 backdrop-blur-sm">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-                料金体系
-            </h2>
-            
-            <div class="max-w-2xl mx-auto">
-                <!-- ベーシックプラン -->
-                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-500 text-center">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">ベーシックプラン</h3>
-                    <div class="text-3xl font-bold text-blue-600 mb-2">¥7,200</div>
-                    <p class="text-gray-600 mb-8">月額（税込）</p>
-                    
-                    <ul class="space-y-4 mb-8 text-left">
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
-                            Amazon・楽天・Yahoo!商品の自動収集
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
-                            Coupang自動出品機能
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
-                            為替対応価格計算
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
-                            定期的な在庫同期
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="text-center mt-12">
-                    <p class="text-gray-600 mb-4">
-                        ※初期費用無料
+                    <p class="text-lg md:text-xl leading-relaxed mb-6">
+                        私自身が韓国輸出で直面した課題を解決するために、Kumoiを開発しました。
                     </p>
-                    <p class="text-sm text-gray-500">
-                        詳細な料金・機能については事前登録者様に優先的にご案内いたします
+                    <p class="text-lg md:text-xl leading-relaxed mb-6">
+                        手動での商品登録、在庫管理、価格調整...これらの作業に費やす時間を、もっと戦略的な業務に使えるはずです。
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. 利用開始の流れ -->
-    <section class="py-20 bg-gradient-to-br from-gray-100 to-gray-200">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-                利用開始の流れ
-            </h2>
-            
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-2xl font-bold text-center text-gray-700 mb-12">シンプル3ステップで自動化開始</h3>
-                
-                <div class="space-y-8">
-                    <!-- ステップ1 -->
-                    <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mr-6">
-                                <span class="text-white font-bold text-lg">1</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-gray-800">アカウント設定</h4>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed ml-18">
-                            Amazon・楽天・Yahoo・Coupangのアカウント連携設定<br>
-                            <span class="text-sm text-blue-600">※詳細な設定ガイド・サポート完備</span>
-                        </p>
-                    </div>
-
-                    <!-- ステップ2 -->
-                    <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mr-6">
-                                <span class="text-white font-bold text-lg">2</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-gray-800">商品選定・登録</h4>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed ml-18">
-                            商品リスト・キーワード・商品URLでの一括商品登録<br>
-                            <span class="text-sm text-blue-600">※出品したい商品の自動絞り込み機能</span>
-                        </p>
-                    </div>
-
-                    <!-- ステップ3 -->
-                    <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-                        <div class="flex items-center mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-6">
-                                <span class="text-white font-bold text-lg">3</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-gray-800">自動運用開始</h4>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed ml-18">
-                            翻訳→出品→在庫チェック→価格更新が全て自動実行<br>
-                            <span class="text-sm text-blue-600">※必要に応じて高頻度チェック機能も利用可能</span>
-                        </p>
+                    <p class="text-lg md:text-xl leading-relaxed mb-8">
+                        Kumoiは単なるツールではありません。あなたの韓国輸出ビジネスを次のレベルに押し上げるパートナーです。
+                    </p>
+                    <div class="border-t border-white/20 pt-6">
+                        <p class="text-xl font-semibold">エンジニア兼無在庫輸出法人代表</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 8. 事前登録CTA -->
-    <section id="register" class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+    <!-- 事前登録フォームセクション -->
+    <section id="register" class="py-20 bg-white/50 backdrop-blur-sm">
         <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                    2025年9月リリース予定
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8">
+                    事前登録で<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">特別価格</span>
                 </h2>
-                <p class="text-xl mb-12">
-                    事前登録で特典をゲット
+                <p class="text-xl text-gray-600 mb-12">
+                    リリース前にご登録いただいた方には、特別価格でご提供いたします
                 </p>
                 
-                <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 mb-8">
-                    <h3 class="text-2xl font-bold mb-6">事前登録特典</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-center">
-                            <span class="w-6 h-6 bg-yellow-400 rounded-full mr-3 flex items-center justify-center">
-                                <span class="text-yellow-900 text-xs font-bold">✓</span>
-                            </span>
-                            <span class="text-lg">リリース時の優先案内</span>
+                <div class="bg-white rounded-3xl p-8 shadow-2xl">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-left text-sm font-medium text-gray-700 mb-2">
+                                メールアドレス
+                            </label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="your-email@example.com"
+                            >
                         </div>
-                        <div class="flex items-center justify-center">
-                            <span class="w-6 h-6 bg-yellow-400 rounded-full mr-3 flex items-center justify-center">
-                                <span class="text-yellow-900 text-xs font-bold">✓</span>
-                            </span>
-                            <span class="text-lg">リリース時の割引特価価格の案内</span>
+                        
+                        <div>
+                            <label for="business-type" class="block text-left text-sm font-medium text-gray-700 mb-2">
+                                現在の韓国輸出状況
+                            </label>
+                            <select 
+                                id="business-type" 
+                                name="business-type"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            >
+                                <option value="">選択してください</option>
+                                <option value="not-started">まだ始めていない</option>
+                                <option value="planning">検討中・準備中</option>
+                                <option value="starting">始めたばかり</option>
+                                <option value="experienced">経験あり</option>
+                                <option value="professional">本格的に運営中</option>
+                            </select>
                         </div>
-                        <div class="flex items-center justify-center">
-                            <span class="w-6 h-6 bg-yellow-400 rounded-full mr-3 flex items-center justify-center">
-                                <span class="text-yellow-900 text-xs font-bold">✓</span>
-                            </span>
-                            <span class="text-lg">β版テストへの優先参加権</span>
+
+                        <div>
+                            <label for="interest" class="block text-left text-sm font-medium text-gray-700 mb-2">
+                                最も興味のある機能
+                            </label>
+                            <select 
+                                id="interest" 
+                                name="interest"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            >
+                                <option value="">選択してください</option>
+                                <option value="auto-listing">自動商品登録</option>
+                                <option value="inventory-sync">在庫同期</option>
+                                <option value="price-management">価格管理</option>
+                                <option value="translation">翻訳機能</option>
+                                <option value="analytics">売上分析</option>
+                            </select>
                         </div>
+                        
+                        <button 
+                            type="submit"
+                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl text-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                        >
+                            事前登録する
+                        </button>
+                    </form>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200">
+                        <p class="text-sm text-gray-500">
+                            ご登録いただいたメールアドレスは、Kumoiの最新情報配信のみに使用いたします。
+                        </p>
                     </div>
-                </div>
-                
-                <!-- Google Forms埋め込み -->
-                <div class="bg-white rounded-3xl p-4 shadow-2xl max-w-2xl mx-auto">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNw5vNR0gc_3QYjXQwJMW5lW2mLewgpBVOr-hX1lJxf7pGeg/viewform?embedded=true" 
-                            width="100%" 
-                            height="1800" 
-                            frameborder="0" 
-                            marginheight="0" 
-                            marginwidth="0"
-                            class="rounded-xl">
-                        読み込んでいます…
-                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- フッター -->
+    <!-- フッターセクション -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-6">
             <div class="text-center">
@@ -534,7 +224,7 @@
                     Kumoi
                 </h3>
                 <p class="text-gray-400 mb-8">
-                    日本の商品を韓国で自動出品・自動在庫管理できる次世代システム
+                    韓国輸出を自動化する次世代ツール
                 </p>
                 
                 <div class="border-t border-gray-800 pt-8">
@@ -547,7 +237,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- スムーススクロール JavaScript -->
     <script>
         // スムーススクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -563,7 +253,11 @@
             });
         });
 
-        // Google Formsを使用するため、フォーム送信処理は不要
+        // フォーム送信処理（デモ用）
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('事前登録ありがとうございます！リリース時にご連絡いたします。');
+        });
 
         // アニメーション効果
         const observerOptions = {
