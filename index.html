@@ -95,7 +95,7 @@
                 </div>
                 
                 <a href="#register" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-bounce-gentle">
-                    事前登録する
+                    30日間無料で事前登録する
                 </a>
             </div>
         </div>
@@ -410,17 +410,20 @@
     <!-- 6. 料金体系セクション -->
     <section class="py-20 bg-white/50 backdrop-blur-sm">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-                料金体系
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-8">
+                料金プラン<span class="text-blue-600">（無料体験あり）</span>
             </h2>
             
-            <div class="max-w-2xl mx-auto">
-                <!-- ベーシックプラン -->
-                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-500 text-center">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">ベーシックプラン</h3>
-                    <div class="text-3xl font-bold text-blue-600 mb-2">¥7,200</div>
-                    <p class="text-gray-600 mb-8">月額（税込）<br><span class="text-sm text-blue-600">事前申込みで割引</span></p>
-                    
+            <!-- 2カラム比較表 -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- 通常プラン -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <h3 class="text-xl font-bold mb-4">通常お申し込み</h3>
+                    <div class="text-center mb-6">
+                        <div class="text-2xl font-bold text-green-600 mb-2">14日間無料体験</div>
+                        <div class="text-3xl font-bold text-blue-600">¥7,200/月</div>
+                        <p class="text-gray-600 text-sm">（税込）</p>
+                    </div>
                     <ul class="space-y-4 mb-8 text-left">
                         <li class="flex items-center">
                             <span class="w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
@@ -441,14 +444,45 @@
                     </ul>
                 </div>
                 
-                <div class="text-center mt-12">
-                    <p class="text-gray-600 mb-4">
-                        ※ 初期費用無料
-                    </p>
-                    <p class="text-sm text-gray-500">
-                        詳細な料金・機能については事前登録者様に優先的にご案内いたします
-                    </p>
+                <!-- 事前申し込み特典 -->
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-3xl p-8 shadow-xl relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full text-sm font-bold">
+                        事前申込み特典
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 mt-4">事前お申し込み</h3>
+                    <div class="text-center mb-6">
+                        <div class="text-2xl font-bold text-yellow-300 mb-2">30日間無料体験</div>
+                        <div class="text-3xl font-bold">¥5,400/月</div>
+                        <p class="text-blue-100 text-sm">（税込・初月25%OFF）</p>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-left">
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
+                            Amazon・楽天・Yahoo!商品の自動収集
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
+                            Coupang自動出品機能
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
+                            為替対応価格計算
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center mr-3 text-sm font-bold">✓</span>
+                            定期的な在庫同期
+                        </li>
+                    </ul>
                 </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-4">
+                    ※ 初期費用無料
+                </p>
+                <p class="text-sm text-gray-500">
+                    詳細な料金・機能については事前登録者様に優先的にご案内いたします
+                </p>
             </div>
         </div>
     </section>
@@ -524,6 +558,12 @@
                 <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 mb-8">
                     <h3 class="text-2xl font-bold mb-6">事前登録特典</h3>
                     <div class="space-y-4">
+                        <div class="flex items-center justify-center">
+                            <span class="w-6 h-6 bg-yellow-400 rounded-full mr-3 flex items-center justify-center">
+                                <span class="text-yellow-900 text-xs font-bold">✓</span>
+                            </span>
+                            <span class="text-lg font-bold">30日間無料体験（通常14日間）</span>
+                        </div>
                         <div class="flex items-center justify-center">
                             <span class="w-6 h-6 bg-yellow-400 rounded-full mr-3 flex items-center justify-center">
                                 <span class="text-yellow-900 text-xs font-bold">✓</span>
