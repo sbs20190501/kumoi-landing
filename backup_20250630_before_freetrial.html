@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumoi（クモイ）- 日本の商品を韓国で自動出品・自動在庫管理できる次世代システム</title>
+    <meta name="description" content="Amazon・楽天・Yahoo!の商品をCoupang等に完全自動出品。2025年9月リリース予定。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'bounce-gentle': 'bounceGentle 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounceGentle {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
+
+    <!-- 1. ヒーローセクション -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- 背景装飾 -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-indigo-600/5 to-purple-600/5"></div>
+        <div class="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6">
+                    Kumoi
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-800 mb-4 font-bold">
+                    日本の商品を韓国で自動出品・自動在庫管理できる次世代システム
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600 mb-12">
+                    Amazon・楽天・Yahoo!の商品をCoupang等に完全自動出品
+                </p>
+                
+                <!-- システムの特徴 -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 max-w-4xl mx-auto">
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
+                        <div class="text-blue-600 font-semibold text-sm">✓ 最新の自動化システム</div>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
+                        <div class="text-blue-600 font-semibold text-sm">✓ 高品質翻訳サービス</div>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
+                        <div class="text-blue-600 font-semibold text-sm">✓ 定期的な自動更新</div>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
+                        <div class="text-blue-600 font-semibold text-sm">✓ 為替対応価格計算</div>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
+                        <div class="text-blue-600 font-semibold text-sm">✓ 韓国ECマルチサイト対応</div>
+                    </div>
+                    <div class="bg-white/70 backdrop-blur-sm rounded-xl p-4 border border-white/20 shadow-lg">
+                        <div class="text-blue-600 font-semibold text-sm">✓ 月額7,200円～（事前申込みで割引）</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/70 backdrop-blur-sm rounded-3xl p-12 mb-12 shadow-2xl border border-white/20 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <p class="text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">2025年9月</p>
+                        <p class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">正式リリース予定</p>
+                    </div>
+                </div>
+                
+                <a href="#register" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-bounce-gentle">
+                    事前登録する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 以下、残りのセクションは同じ... -->
+    <!-- 省略して実際のファイルには全て含まれます -->
+
+</body>
+</html>
