@@ -47,7 +47,7 @@
 <body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 min-h-screen">
 
     <!-- 1. ヒーローセクション -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section class="py-24 md:py-32 flex items-center justify-center relative overflow-hidden">
         <!-- 背景装飾 -->
         <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-indigo-600/5 to-purple-600/5"></div>
         <div class="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
@@ -149,7 +149,7 @@
                         <div class="space-y-4">
                             <div class="flex items-center text-red-100">
                                 <span class="w-6 h-6 bg-red-500 rounded-full mr-3 flex items-center justify-center text-xs">✗</span>
-                                <span>複数サイト個別管理</span>
+                                <span>手動での商品管理</span>
                             </div>
                             <div class="flex items-center text-red-100">
                                 <span class="w-6 h-6 bg-red-500 rounded-full mr-3 flex items-center justify-center text-xs">✗</span>
@@ -188,7 +188,7 @@
                             </div>
                             <div class="flex items-center text-green-100">
                                 <span class="w-6 h-6 bg-green-500 rounded-full mr-3 flex items-center justify-center text-xs">✓</span>
-                                <span>高品質翻訳サービスで自動翻訳</span>
+                                <span>Google翻訳で自動翻訳</span>
                             </div>
                             <div class="flex items-center text-green-100">
                                 <span class="w-6 h-6 bg-green-500 rounded-full mr-3 flex items-center justify-center text-xs">✓</span>
@@ -209,7 +209,7 @@
     <section class="py-20 bg-white/50 backdrop-blur-sm">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-16">
-                Kumoiの<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">5つの核心機能</span>
+                Kumoiの<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">6つの核心機能</span>
             </h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -270,7 +270,7 @@
                 </div>
 
                 <!-- 機能5 -->
-                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 animate-slide-up md:col-span-2 lg:col-span-1" style="animation-delay: 0.8s;">
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 animate-slide-up" style="animation-delay: 0.8s;">
                     <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -280,6 +280,20 @@
                     <p class="text-gray-600 leading-relaxed text-sm">
                         お使いの配送業者の送料表を取り込み可能<br>
                         正確な送料計算で利益の最適化を実現
+                    </p>
+                </div>
+
+                <!-- 機能6 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:scale-105 animate-slide-up" style="animation-delay: 1.0s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-red-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">出品NGフィルター機能</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        NGワード・NG ASIN登録で危険な商品を自動ブロック<br>
+                        全体共有・個別登録の両方に対応し、アカウントリスクを最小限に
                     </p>
                 </div>
             </div>
@@ -488,6 +502,28 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- 追加オプション機能 -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl md:col-span-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">追加オプション機能</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-teal-400 rounded-full mr-3"></span>
+                            Coupang返送料を自動で上限まで引き上げ（返品率低下＋返品発生時の手数料回収）
+                        </li>
+                        <li class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-teal-400 rounded-full mr-3"></span>
+                            その他、運用に役立つ便利機能を順次追加予定
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -554,7 +590,7 @@
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                    サービス稼働中
+                    30日間無料で始める
                 </h2>
                 <p class="text-xl mb-12">
                     30日間無料体験で今すぐ始めましょう
@@ -564,7 +600,7 @@
                 <div class="bg-white rounded-3xl p-4 shadow-2xl max-w-2xl mx-auto">
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNw5vNR0gc_3QYjXQwJMW5lW2mLewgpBVOr-hX1lJxf7pGeg/viewform?embedded=true" 
                             width="100%" 
-                            height="1800" 
+                            height="1200" 
                             frameborder="0" 
                             marginheight="0" 
                             marginwidth="0"
@@ -589,7 +625,7 @@
                 
                 <div class="border-t border-gray-800 pt-8">
                     <p class="text-gray-500 text-sm">
-                        © 2025 Kumoi. All rights reserved.
+                        © 2026 Kumoi. All rights reserved.
                     </p>
                 </div>
             </div>
