@@ -115,6 +115,15 @@
                             <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                                 <span class="text-white font-bold">✗</span>
                             </div>
+                            <p class="text-lg text-gray-700 font-medium">在庫を反映させるために、毎日Excelを手作業でアップロードしている</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-6 shadow-xl border-l-4 border-red-500 hover:transform hover:scale-105 transition-all duration-300">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <span class="text-white font-bold">✗</span>
+                            </div>
                             <p class="text-lg text-gray-700 font-medium">在庫の反映が遅く、売り切れ商品が残ってキャンセル・ペナルティが発生する</p>
                         </div>
                     </div>
@@ -230,8 +239,87 @@
         </div>
     </section>
 
-    <!-- 4. 乗り換えても困らない機能（既存資産の引き継ぎ） -->
+    <!-- 3.5 他ツールとの比較（差別化） -->
     <section class="py-20 bg-white/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-4">
+                なぜ、<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Kumoiに乗り換える</span>のか
+            </h2>
+            <p class="text-center text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
+                韓国輸出ツールの多くは、在庫を反映させるために<strong class="text-red-600">毎日Excelを手作業でアップロード</strong>する必要があります。<br class="hidden md:block">
+                在庫を<strong>自動</strong>で同期できるツールは限られ、しかもその多くは<strong class="text-red-600">高額</strong>です。
+            </p>
+            <p class="text-center text-lg md:text-xl font-bold text-gray-800 mb-12 max-w-3xl mx-auto">
+                「<span class="text-blue-600">自動で在庫管理できて、しかも手頃</span>」── これを両立しているのが Kumoi です。
+            </p>
+
+            <div class="max-w-5xl mx-auto overflow-x-auto pb-2">
+                <table class="w-full min-w-[680px] border-collapse bg-white rounded-2xl overflow-hidden shadow-xl">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700">
+                            <th class="p-4 text-left text-sm md:text-base font-semibold w-1/4"></th>
+                            <th class="p-4 text-center text-sm md:text-base font-semibold">手動アップロード型<br><span class="text-xs font-normal text-gray-500">（多くのツール）</span></th>
+                            <th class="p-4 text-center text-sm md:text-base font-semibold">自動・高額型<br><span class="text-xs font-normal text-gray-500">（一部の高機能ツール）</span></th>
+                            <th class="p-4 text-center text-sm md:text-base font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600">Kumoi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr>
+                            <td class="p-4 font-semibold text-gray-700 text-sm md:text-base align-top">在庫の反映</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">✗<br>毎日Excelを<br>手作業でアップロード</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">✓<br>自動同期</td>
+                            <td class="p-4 text-center text-sm font-semibold text-blue-700 bg-blue-50 align-top">✓<br>定期的に自動同期<br>（毎日の作業ゼロ）</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-gray-700 text-sm md:text-base align-top">欠品・ペナルティ</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">✗<br>更新忘れで<br>欠品リスク</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">✓<br>自動で抑制</td>
+                            <td class="p-4 text-center text-sm font-semibold text-blue-700 bg-blue-50 align-top">✓<br>自動同期で抑制</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-gray-700 text-sm md:text-base align-top">韓国手数料・為替の<br>価格計算</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">△<br>手計算が必要・<br>赤字になりやすい</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">○<br>ツールによる</td>
+                            <td class="p-4 text-center text-sm font-semibold text-blue-700 bg-blue-50 align-top">✓<br>カテゴリ別手数料＋<br>為替を自動反映</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-gray-700 text-sm md:text-base align-top">出品NG対策</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">△<br>ツールによる</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">○<br>ツールによる</td>
+                            <td class="p-4 text-center text-sm font-semibold text-blue-700 bg-blue-50 align-top">✓<br>NGワード・NG ASINで<br>自動ブロック</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-gray-700 text-sm md:text-base align-top">サポート</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">△<br>ツールによる</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">○<br>ツールによる</td>
+                            <td class="p-4 text-center text-sm font-semibold text-blue-700 bg-blue-50 align-top">✓<br>現役運営者が<br>Chatworkで直接対応</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-gray-700 text-sm md:text-base align-top">月額料金</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">比較的安価<br>（ただし毎日の手間大）</td>
+                            <td class="p-4 text-center text-sm text-gray-600 align-top">✗<br>高額</td>
+                            <td class="p-4 text-center text-sm font-bold text-blue-700 bg-blue-50 align-top">✓<br>7,800円／月〜<br>初期費用無料</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="max-w-3xl mx-auto mt-10 text-center">
+                <p class="text-lg md:text-xl font-bold text-gray-800 mb-6">
+                    毎日のExcelアップロードから解放され、<br class="md:hidden">高額ツール並みの自動化を、手頃な価格で。
+                </p>
+                <a href="#register" class="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    14日間無料でKumoiを試す
+                </a>
+            </div>
+            <p class="text-center text-gray-400 text-xs mt-6 max-w-2xl mx-auto">
+                ※ 比較内容は一般的な韓国輸出ツールの傾向をもとにした当社の見解です。各ツールの仕様は提供元により異なります。
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. 乗り換えても困らない機能（既存資産の引き継ぎ） -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl md:text-5xl font-bold text-center text-gray-800 mb-4">
                 乗り換えても、<span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">必要な機能はすべて揃っています</span>
