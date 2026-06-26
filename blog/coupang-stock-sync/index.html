@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BSCDJ4G0CQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BSCDJ4G0CQ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coupangの在庫反映が遅いとどうなる？無在庫輸出の販売停止リスクと自動化での解決｜Kumoiブログ</title>
+    <meta name="description" content="韓国Coupangでの無在庫輸出で、在庫切れ商品の反映が遅れると何が起きるのか。手作業アップロードの限界と、在庫同期を自動化する考え方を、実際に運用している立場から解説します。">
+    <link rel="canonical" href="https://kumoi-tool.com/blog/coupang-stock-sync/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#1a1d23',
+                        brand: { DEFAULT: '#15725f', dark: '#0e5648', 50: '#eef4f2', 100: '#d7e7e2' },
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        display: ['"Zen Kaku Gothic New"', '"Noto Sans JP"', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; }
+
+        /* 記事本文の読みやすさ設計 */
+        .article { font-size: 17px; line-height: 1.95; color: #2b2f36; }
+        .article p { margin: 1.4em 0; }
+        .article h2 {
+            font-family: '"Zen Kaku Gothic New"', sans-serif;
+            font-size: 1.55rem; font-weight: 700; color: #1a1d23;
+            line-height: 1.4; margin: 2.6em 0 1em;
+            padding: 0.55em 0.9em; background: #f5f7f7;
+            border-left: 5px solid #15725f; border-radius: 4px;
+            scroll-margin-top: 5rem;
+        }
+        .article h3 {
+            font-family: '"Zen Kaku Gothic New"', sans-serif;
+            font-size: 1.2rem; font-weight: 700; color: #15725f;
+            line-height: 1.5; margin: 2.2em 0 0.8em;
+            padding-bottom: 0.4em; border-bottom: 2px solid #d7e7e2;
+            scroll-margin-top: 5rem;
+        }
+        .article strong { font-weight: 700; color: #1a1d23; }
+        .article .marker { background: linear-gradient(transparent 60%, #d7e7e2 60%); font-weight: 700; }
+        .article a.inline { color: #15725f; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+        .article ul { margin: 1.3em 0; padding-left: 0; list-style: none; }
+        .article ul > li { position: relative; padding-left: 1.6em; margin: 0.7em 0; }
+        .article ul > li::before { content: ""; position: absolute; left: 0.2em; top: 0.7em; width: 7px; height: 7px; background: #15725f; border-radius: 50%; }
+        .article ol { margin: 1.3em 0; padding-left: 1.4em; }
+        .article ol > li { margin: 0.7em 0; padding-left: 0.3em; }
+        .article ol > li::marker { color: #15725f; font-weight: 700; }
+    </style>
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+    <div class="h-1 bg-brand w-full"></div>
+
+    <!-- ヘッダー（LPと共通） -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-baseline gap-3">
+                <span class="font-display text-xl font-bold tracking-tight text-ink">Kumoi</span>
+                <span class="hidden sm:inline text-xs text-gray-400 border-l border-gray-200 pl-3">韓国輸出 自動化ツール</span>
+            </a>
+            <nav class="flex items-center gap-6">
+                <a href="/blog/" class="hidden md:inline text-sm font-medium text-ink">ブログ</a>
+                <a href="/#compare" class="hidden md:inline text-sm font-medium text-gray-500 hover:text-ink transition-colors">他ツールとの違い</a>
+                <a href="/#register" class="text-sm font-bold text-white bg-brand hover:bg-brand-dark px-4 py-2 rounded-md transition-colors">無料で試す</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- パンくず -->
+    <div class="max-w-3xl mx-auto px-6 pt-6">
+        <nav class="text-xs text-gray-400">
+            <a href="/" class="hover:text-brand">ホーム</a> <span class="mx-1.5">›</span>
+            <a href="/blog/" class="hover:text-brand">ブログ</a> <span class="mx-1.5">›</span>
+            <span class="text-gray-500">在庫反映の遅れと自動化</span>
+        </nav>
+    </div>
+
+    <!-- 記事ヘッダー -->
+    <article class="max-w-3xl mx-auto px-6 pt-6 pb-16">
+        <header class="mb-10">
+            <span class="inline-block text-xs font-bold text-brand bg-brand-50 rounded px-2.5 py-1 mb-4">在庫管理</span>
+            <h1 class="font-display text-2xl md:text-[2rem] font-bold text-ink leading-[1.4] mb-5">
+                Coupangの在庫反映が遅いとどうなる？無在庫輸出の販売停止リスクと自動化での解決
+            </h1>
+            <div class="flex items-center gap-3 text-sm text-gray-400 border-b border-gray-100 pb-6">
+                <time datetime="2026-06-26">2026.06.26</time>
+                <span class="text-gray-300">|</span>
+                <span>韓国輸出ノウハウ</span>
+            </div>
+        </header>
+
+        <!-- 目次 -->
+        <nav class="bg-[#f7f8fa] border border-gray-200 rounded-xl p-6 mb-12">
+            <p class="font-display font-bold text-ink mb-4 flex items-center gap-2">
+                <span class="inline-block w-1 h-4 bg-brand rounded-full"></span>目次
+            </p>
+            <ol class="space-y-2.5 text-[15px]">
+                <li><a href="#s1" class="text-gray-600 hover:text-brand transition-colors">1. なぜ在庫反映の「速さ」が韓国輸出で重要なのか</a></li>
+                <li><a href="#s2" class="text-gray-600 hover:text-brand transition-colors">2. 在庫切れ商品を放置すると起きること</a></li>
+                <li><a href="#s3" class="text-gray-600 hover:text-brand transition-colors">3. 「毎日Excelアップロード」方式の限界</a></li>
+                <li><a href="#s4" class="text-gray-600 hover:text-brand transition-colors">4. 在庫同期を自動化するという考え方</a></li>
+                <li><a href="#s5" class="text-gray-600 hover:text-brand transition-colors">5. まとめ：在庫管理こそ自動化すべき理由</a></li>
+            </ol>
+        </nav>
+
+        <!-- 本文 -->
+        <div class="article">
+
+            <p>日本の商品を韓国の<strong>Coupang（クーパン）</strong>で無在庫販売していると、誰もが一度はぶつかるのが「在庫反映の遅れ」の問題です。仕入れ元（Amazonや楽天など）で在庫が切れたのに、Coupang側の出品が「販売中」のまま残ってしまう——この状態が、無在庫輸出では思った以上に大きなリスクになります。</p>
+
+            <p>この記事では、なぜ在庫反映の速さが重要なのか、手作業での在庫更新がなぜ限界を迎えるのか、そしてそれを自動化するとどう変わるのかを、<strong>実際に自社の韓国輸出で運用している立場</strong>から整理します。</p>
+
+            <h2 id="s1">1. なぜ在庫反映の「速さ」が韓国輸出で重要なのか</h2>
+
+            <p>無在庫輸出のビジネスは、「仕入れ元に在庫がある」ことが大前提です。注文が入ってから仕入れて発送するため、<span class="marker">仕入れ元の在庫状況と、出品先（Coupang）の在庫表示が常に一致している</span>必要があります。</p>
+
+            <p>ところが仕入れ元の在庫は、こちらの都合とは関係なく刻々と変わります。人気商品なら数時間で売り切れることもあります。このとき、Coupang側の在庫表示の更新が遅れると、<strong>「本当はもう仕入れられない商品」を販売し続けてしまう</strong>状態が生まれます。</p>
+
+            <h2 id="s2">2. 在庫切れ商品を放置すると起きること</h2>
+
+            <p>在庫切れの商品をCoupangに残したままにすると、典型的には次のような問題につながります。</p>
+
+            <ul>
+                <li><strong>注文が入っても発送できない</strong>——仕入れ元に在庫がないため、結局キャンセル対応に追われます。</li>
+                <li><strong>キャンセルによる評価・アカウントへの影響</strong>——出荷できない注文のキャンセルが続くと、出品者としての信頼や販売者指標に悪影響が出やすくなります。</li>
+                <li><strong>顧客体験の悪化</strong>——「買えると思って注文したのに後からキャンセル」は、購入者にとって最もストレスの大きい体験のひとつです。</li>
+            </ul>
+
+            <div class="bg-brand-50 border-l-4 border-brand rounded-r-lg p-5 my-8">
+                <p class="font-bold text-brand mb-1.5 text-[15px]">ポイント</p>
+                <p class="text-[15px] leading-relaxed text-gray-700 m-0">無在庫輸出では、売上を伸ばすことと同じくらい「<strong>売ってはいけない商品を、素早く売り場から下げる</strong>」ことが重要です。在庫管理は攻めではなく“守り”の要です。</p>
+            </div>
+
+            <h2 id="s3">3. 「毎日Excelアップロード」方式の限界</h2>
+
+            <p>多くの方が最初に行うのが、仕入れ元の在庫を確認し、CSVやExcelにまとめて出品先へアップロードする方法です。あるいは、そうした作業を半手動で支援するツールを使っているケースもあるでしょう。</p>
+
+            <p>この方式には、はっきりとした限界があります。</p>
+
+            <h3>更新が「1日1回」では間に合わない</h3>
+            <p>手作業のアップロードは、現実的には1日1回が精一杯です。しかし在庫は1日のうちに何度も変わります。<span class="marker">朝アップロードした時点では在庫があっても、昼に売り切れていれば、夕方の注文には対応できません。</span></p>
+
+            <h3>商品数が増えるほど破綻する</h3>
+            <p>扱う商品が数百〜数千になると、毎日すべての在庫を手で確認・反映するのは事実上不可能です。結果として「気づいたら在庫切れ商品が大量に残っていた」という状態に陥りがちです。</p>
+
+            <h3>作業そのものが本業を圧迫する</h3>
+            <p>毎日決まった時間にExcel作業へ拘束されると、商品リサーチや新規出品といった<strong>本来やるべき“伸ばす”仕事の時間が奪われます。</strong></p>
+
+            <h2 id="s4">4. 在庫同期を自動化するという考え方</h2>
+
+            <p>これらの問題の根本的な解決策が、<strong>在庫同期の自動化</strong>です。考え方はシンプルで、「仕入れ元の在庫を定期的に自動でチェックし、変化があればCoupang側へ自動で反映する」という仕組みを持つことです。</p>
+
+            <p>自動化されていると、たとえば次のように動きます。</p>
+
+            <ol>
+                <li>仕入れ元（Amazon・楽天など）の在庫を、システムが定期的に自動チェックする</li>
+                <li>在庫切れを検知したら、Coupang側の該当商品を自動で販売停止にする</li>
+                <li>在庫が復活したら、再び自動で販売再開する</li>
+            </ol>
+
+            <p>人が毎日Excelを触らなくても、この流れがバックグラウンドで回り続けます。これにより、<span class="marker">在庫切れ商品が売り場に残る時間を最小化でき、キャンセルやペナルティのリスクを大きく下げられます。</span></p>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-6 my-9">
+                <p class="font-bold text-ink mb-2">Kumoiの場合</p>
+                <p class="text-[15px] leading-relaxed text-gray-600 m-0">私たちが開発・運用している韓国輸出ツール「Kumoi」は、まさにこの<strong>在庫同期の自動化</strong>を中心に作られています。仕入れ元の在庫を定期的に自動チェックし、在庫切れはCoupangへ自動反映。価格も韓国の手数料・為替を踏まえて自動計算します。毎日のExcelアップロードから解放されたい方向けの設計です。</p>
+            </div>
+
+            <h2 id="s5">5. まとめ：在庫管理こそ自動化すべき理由</h2>
+
+            <p>無在庫輸出における在庫管理は、地味ですが最も事故が起きやすく、かつ最も自動化の効果が大きい領域です。最後に要点を整理します。</p>
+
+            <ul>
+                <li>在庫反映の遅れは、キャンセル・ペナルティ・顧客離れに直結する</li>
+                <li>手作業のExcelアップロードは「1日1回」「商品数の壁」で必ず限界が来る</li>
+                <li>在庫同期を自動化すれば、在庫切れ商品が売り場に残る時間を最小化できる</li>
+                <li>結果として、人は“伸ばす”仕事に集中できる</li>
+            </ul>
+
+            <p>もし今、毎日の在庫更新作業や在庫反映の遅れに悩んでいるなら、それは仕組みで解決できる問題です。自動化を前提にツールを選び直すだけで、日々の運用は大きく変わります。</p>
+        </div>
+
+        <!-- 記事内CTA -->
+        <div class="bg-ink rounded-2xl px-6 py-10 md:px-10 md:py-12 text-center mt-12">
+            <h2 class="font-display text-xl md:text-2xl font-bold text-white mb-3">在庫反映の遅れ、仕組みで解決しませんか？</h2>
+            <p class="text-gray-300 text-sm leading-relaxed mb-6 max-w-xl mx-auto">Kumoiは仕入れ元の在庫を自動でチェックし、Coupangへ自動反映する韓国輸出ツールです。今お使いのツールを使い続けたまま、まずは無料でお試しいただけます。</p>
+            <a href="/#register" class="inline-flex justify-center items-center bg-brand hover:bg-brand-dark text-white font-bold px-7 py-3.5 rounded-md transition-colors">無料で試してみる</a>
+            <p class="text-gray-500 text-xs mt-4">※ 今のツールと並行してお試しいただけます</p>
+        </div>
+
+        <!-- 運営者プロフィール（信頼づくり） -->
+        <aside class="mt-12 border border-gray-200 rounded-xl p-6 flex items-start gap-4">
+            <div class="w-14 h-14 rounded-full bg-brand-50 flex items-center justify-center flex-shrink-0">
+                <span class="font-display font-bold text-brand text-lg">K</span>
+            </div>
+            <div>
+                <p class="font-bold text-ink text-[15px] mb-1">Kumoi 開発者</p>
+                <p class="text-sm text-gray-500 leading-relaxed">現役エンジニア × 無在庫輸出法人代表。自社の韓国輸出を実際に運用しながら、その現場で必要な機能をツール「Kumoi」として開発・改善しています。<a href="https://x.com/Kumoi_dev" target="_blank" rel="noopener" class="text-brand font-bold hover:underline">公式X（@Kumoi_dev）</a></p>
+            </div>
+        </aside>
+
+        <!-- 一覧へ戻る -->
+        <div class="mt-10 text-center">
+            <a href="/blog/" class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-500 hover:text-brand transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+                ブログ一覧へ戻る
+            </a>
+        </div>
+    </article>
+
+    <!-- フッター（LPと共通） -->
+    <footer class="bg-ink text-white">
+        <div class="max-w-5xl mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-b border-white/10 pb-8">
+                <div>
+                    <a href="/" class="font-display text-2xl font-bold">Kumoi</a>
+                    <p class="text-gray-400 text-sm mt-2 max-w-md">日本の商品を韓国で自動出品・自動在庫管理できる、乗り換え特化の韓国輸出システム。</p>
+                </div>
+                <a href="/#register" class="inline-flex justify-center items-center bg-brand hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-md transition-colors text-sm flex-shrink-0">無料で試す</a>
+            </div>
+            <div class="flex items-center justify-between mt-8">
+                <p class="text-gray-500 text-xs">© 2026 Kumoi. All rights reserved.</p>
+                <a href="https://x.com/Kumoi_dev" target="_blank" rel="noopener" class="text-gray-400 hover:text-white text-xs transition-colors">公式X</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
